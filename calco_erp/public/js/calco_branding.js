@@ -147,7 +147,10 @@
     if (isLoginPage()) return false;
     const route = currentRoute();
     const pathname = window.location.pathname.replace(/\/$/, "").toLowerCase();
+    // The desk home also opens at the site root ("/") and at /app.
+    const deskLoaded = !!(window.frappe && frappe.boot && frappe.boot.user);
     return (
+      (deskLoaded && (pathname === "" || pathname === "/app")) ||
       pathname === "/desk" ||
       pathname === "/desk/desktop" ||
       pathname === "/app/desktop" ||
