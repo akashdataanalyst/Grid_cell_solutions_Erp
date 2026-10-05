@@ -1,4 +1,4 @@
-# Calco ERP — Custom Branding & UI
+# Grid ERP — Custom Branding & UI
 
 Frappe/ERPNext app for **Calco PolyTechnik Pvt Ltd**. It brands the login page,
 the desk home and the workspace pages. It changes presentation only: native
@@ -36,12 +36,12 @@ A blank field falls back to the built-in default in `calco_workspace_config.js`.
 ## Code layout
 
 ```text
-calco_erp/
+grid_erp/
 ├── hooks.py                      Asset includes, branding hooks
 ├── assets.py                     Serves public/ files through the backend
 ├── branding.py                   Serves settings to desk/login; edit lock
-├── modules.txt                   "Calco ERP" module
-├── calco_erp/doctype/grid_branding_settings/
+├── modules.txt                   "Grid ERP" module
+├── grid_erp/doctype/grid_branding_settings/
 │   ├── grid_branding_settings.json   Settings form fields
 │   ├── grid_branding_settings.py     Save checks the lock, then clears cache
 │   └── grid_branding_settings.js     Locked form + "Unlock to Edit" dialog
@@ -62,7 +62,7 @@ the desk and to an inline `<script>` in `<head>` on website/login pages.
 ## How CSS, JS and images load
 
 `assets.py` serves everything under `public/` from the Python backend at
-`/api/method/calco_erp.assets.serve?path=<file>&v=<hash>`, not from `/assets/`.
+`/api/method/grid_erp.assets.serve?path=<file>&v=<hash>`, not from `/assets/`.
 So nothing has to be built, copied or symlinked, and nginx needs no change:
 the files load on any bench or Docker setup where the app is installed.
 
@@ -73,7 +73,7 @@ the files load on any bench or Docker setup where the app is installed.
 
 ```bash
 bench get-app https://github.com/akashdataanalyst/ErpNext-Demo.git
-bench --site <site> install-app calco_erp   # existing site: bench --site <site> migrate
+bench --site <site> install-app grid_erp   # existing site: bench --site <site> migrate
 ```
 
 In Docker, the app code must be present in every Python container (backend,
