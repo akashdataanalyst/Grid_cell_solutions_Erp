@@ -37,7 +37,8 @@ A blank field falls back to the built-in default in `calco_workspace_config.js`.
 
 ```text
 calco_erp/
-├── hooks.py                      Asset includes, ASSET_VERSION, branding hooks
+├── hooks.py                      Asset includes, branding hooks
+├── assets.py                     Serves public/ files through the backend
 ├── branding.py                   Serves settings to desk/login; edit lock
 ├── modules.txt                   "Calco ERP" module
 ├── calco_erp/doctype/grid_branding_settings/
@@ -58,23 +59,27 @@ the desk and to an inline `<script>` in `<head>` on website/login pages.
 `calco_workspace_config.js` merges them over its defaults into
 `window.calcoWorkspaceViewConfig`, which `calco_branding.js` reads.
 
-## Changing CSS or JS
+## How CSS, JS and images load
 
-After editing any file under `public/`, bump `ASSET_VERSION` in `hooks.py`,
-otherwise browsers keep serving the cached copy.
+`assets.py` serves everything under `public/` from the Python backend at
+`/api/method/calco_erp.assets.serve?path=<file>&v=<hash>`, not from `/assets/`.
+So nothing has to be built, copied or symlinked, and nginx needs no change:
+the files load on any bench or Docker setup where the app is installed.
 
-## Deployment (frappe_docker)
+`<hash>` is computed from the files themselves, so after editing anything in
+`public/` browsers fetch the new copy automatically. No version bump is needed.
 
-The app is baked into the `custom/erpnext-hrms-calco` image
-(`frappe_docker/Dockerfile.custom`). After changing code:
+## Installing on any server
 
-1. Rebuild the image and recreate **all** containers (backend, frontend,
-   queue-short, queue-long, scheduler, websocket). They share one Redis cache,
-   so a container running older app code breaks the others.
-2. Run `bench --site <site> migrate`.
+```bash
+bench get-app https://github.com/akashdataanalyst/ErpNext-Demo.git
+bench --site <site> install-app calco_erp   # existing site: bench --site <site> migrate
+```
 
-On a new site, `bench --site <site> install-app calco_erp` creates the module,
-the settings form and its default values.
+In Docker, the app code must be present in every Python container (backend,
+queue-short, queue-long, scheduler), because they share one Redis cache.
+After pulling new code, restart those containers and run
+`bench --site <site> migrate`.
 
 ## Version
 

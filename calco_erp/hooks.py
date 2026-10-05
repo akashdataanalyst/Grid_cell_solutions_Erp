@@ -12,13 +12,9 @@ app_version = app_version
 # Assets
 # ---------------------------------------------------------------------------
 
-# Bump on every CSS/JS change so browsers fetch the new files instead of a cached copy.
-ASSET_VERSION = "20261004-7"
-
-
-def _asset(path):
-	return f"/assets/calco_erp/{path}?v={ASSET_VERSION}"
-
+# Served by calco_erp.assets (Python backend), not /assets, so they load on any
+# setup without building assets. URLs change automatically when a file changes.
+from calco_erp.assets import url as _asset
 
 # Desk (logged-in) pages. calco_workspace_config.js must load before calco_branding.js.
 app_include_css = [
