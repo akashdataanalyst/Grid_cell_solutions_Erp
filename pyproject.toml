@@ -3,7 +3,7 @@ name = "grid_erp"
 authors = [
     {name = "Calco PolyTechnik Pvt Ltd", email = "mis.1@calco.in"}
 ]
-description = "Calco PolyTechnik Manufacturing ERP - Custom Branding & UI"
+description = "Calco PolyTechnik Manufacturing ERP - Branding, WhatsApp and Recruitment Assessment"
 requires-python = ">=3.10"
 readme = "README.md"
 dynamic = ["version"]

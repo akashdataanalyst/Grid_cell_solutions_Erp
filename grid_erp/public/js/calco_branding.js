@@ -11,6 +11,7 @@
   const WORKSPACE_ORDER = SITE_CONFIG.workspaceOrder || [];
   const WORKSPACE_LOGO_OVERRIDES = SITE_CONFIG.workspaceLogoOverrides || {};
   const BRAND_LOGO_ICON_PATHS = SITE_CONFIG.brandLogoIconPaths || [];
+  const FOLDER_LOGO_LABELS = SITE_CONFIG.folderLogoLabels || [];
   const APP_VERSION = SITE_CONFIG.appVersion || "";
   const AUTH_VIEW_SELECTOR = [
     ".for-login",
@@ -315,6 +316,28 @@
     });
   }
 
+  // Frappe draws a folder as a thumbnail of its children; these folders get their own logo.
+  // Runs everywhere the folder appears: desktop, folder pop-ups and nested thumbnails.
+  function applyFolderLogos() {
+    if (!FOLDER_LOGO_LABELS.length || !window.frappe?.utils?.get_desktop_icon || !frappe.boot) return;
+    const style = frappe.boot.desktop_icon_style || "Solid";
+    FOLDER_LOGO_LABELS.forEach((label) => {
+      const logoUrl = frappe.utils.get_desktop_icon(label, style);
+      if (!logoUrl) return;
+      document.querySelectorAll(`.desktop-icon[data-id="${CSS.escape(label)}"]`).forEach((icon) => {
+        const holder = icon.querySelector(":scope > .icon-container");
+        if (!holder || holder.querySelector(":scope > img.calco-folder-logo")) return;
+        holder.innerHTML = "";
+        holder.classList.remove("folder-icon");
+        const image = document.createElement("img");
+        image.className = "app-icon calco-folder-logo";
+        image.src = logoUrl;
+        image.alt = label;
+        holder.appendChild(image);
+      });
+    });
+  }
+
   function applyWorkspaceLogoOverrides(icons) {
     icons.forEach((icon) => {
       const title = workspaceTitle(icon);
@@ -413,6 +436,7 @@
     decorateDeskHeader();
     syncWorkspaceCards();
     applyBrandLogoToIcons();
+    applyFolderLogos();
     syncOperationalBrandbar();
   }
 

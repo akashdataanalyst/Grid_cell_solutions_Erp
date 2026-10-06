@@ -36,6 +36,9 @@
       "Frappe HR": "__brand_logo__",
     },
     workspaceOrder: [],
+    // Desktop folders that show their own logo (public/icons/desktop_icons/<variant>/<label>.svg)
+    // instead of a thumbnail of the icons inside. Clicking still opens the folder.
+    folderLogoLabels: ["Communication", "Hiring"],
   };
 
   const settings =

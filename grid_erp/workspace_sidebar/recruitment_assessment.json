@@ -1,0 +1,157 @@
+{
+  "app": "grid_erp",
+  "creation": "2026-07-06 00:00:00.000000",
+  "docstatus": 0,
+  "doctype": "Workspace Sidebar",
+  "header_icon": "check-square",
+  "idx": 0,
+  "items": [
+    {
+      "child": 0,
+      "collapsible": 1,
+      "indent": 0,
+      "keep_closed": 0,
+      "label": "Home",
+      "link_to": "Recruitment Assessment",
+      "link_type": "Workspace",
+      "show_arrow": 0,
+      "type": "Link",
+      "icon": "home"
+    },
+    {
+      "child": 0,
+      "collapsible": 1,
+      "icon": "settings-2",
+      "indent": 0,
+      "keep_closed": 0,
+      "label": "Setup",
+      "link_type": "DocType",
+      "show_arrow": 0,
+      "type": "Section Break"
+    },
+    {
+      "child": 1,
+      "collapsible": 1,
+      "indent": 0,
+      "keep_closed": 0,
+      "label": "Assessment Template",
+      "link_to": "Assessment Template",
+      "link_type": "DocType",
+      "show_arrow": 0,
+      "type": "Link"
+    },
+    {
+      "child": 1,
+      "collapsible": 1,
+      "indent": 0,
+      "keep_closed": 0,
+      "label": "Question Bank",
+      "link_to": "Question Bank",
+      "link_type": "DocType",
+      "show_arrow": 0,
+      "type": "Link"
+    },
+    {
+      "child": 0,
+      "collapsible": 1,
+      "icon": "check-square",
+      "indent": 0,
+      "keep_closed": 0,
+      "label": "Assessments",
+      "link_type": "DocType",
+      "show_arrow": 0,
+      "type": "Section Break"
+    },
+    {
+      "child": 1,
+      "collapsible": 1,
+      "indent": 0,
+      "keep_closed": 0,
+      "label": "Assessment Assignment",
+      "link_to": "Assessment Assignment",
+      "link_type": "DocType",
+      "show_arrow": 0,
+      "type": "Link"
+    },
+    {
+      "child": 1,
+      "collapsible": 1,
+      "indent": 0,
+      "keep_closed": 0,
+      "label": "Assessment Attempt",
+      "link_to": "Assessment Attempt",
+      "link_type": "DocType",
+      "show_arrow": 0,
+      "type": "Link"
+    },
+    {
+      "child": 1,
+      "collapsible": 1,
+      "indent": 0,
+      "keep_closed": 0,
+      "label": "Assessment Notification",
+      "link_to": "Assessment Notification",
+      "link_type": "DocType",
+      "show_arrow": 0,
+      "type": "Link"
+    },
+    {
+      "child": 0,
+      "collapsible": 1,
+      "icon": "notebook-pen",
+      "indent": 0,
+      "keep_closed": 0,
+      "label": "Reports",
+      "link_type": "DocType",
+      "show_arrow": 0,
+      "type": "Section Break"
+    },
+    {
+      "child": 1,
+      "collapsible": 1,
+      "indent": 0,
+      "keep_closed": 0,
+      "label": "Pending Assessments",
+      "link_to": "Pending Assessments",
+      "link_type": "Report",
+      "show_arrow": 0,
+      "type": "Link"
+    },
+    {
+      "child": 1,
+      "collapsible": 1,
+      "indent": 0,
+      "keep_closed": 0,
+      "label": "Expired Assessments",
+      "link_to": "Expired Assessments",
+      "link_type": "Report",
+      "show_arrow": 0,
+      "type": "Link"
+    },
+    {
+      "child": 0,
+      "collapsible": 1,
+      "icon": "settings",
+      "indent": 0,
+      "keep_closed": 0,
+      "label": "Settings",
+      "link_type": "DocType",
+      "show_arrow": 0,
+      "type": "Section Break"
+    },
+    {
+      "child": 1,
+      "collapsible": 1,
+      "indent": 0,
+      "keep_closed": 0,
+      "label": "Assessment Settings",
+      "link_to": "Assessment Settings",
+      "link_type": "DocType",
+      "show_arrow": 0,
+      "type": "Link"
+    }
+  ],
+  "label": "Recruitment Assessment",
+  "name": "Recruitment Assessment",
+  "modified": "2026-10-06 22:30:00.000000"
+}

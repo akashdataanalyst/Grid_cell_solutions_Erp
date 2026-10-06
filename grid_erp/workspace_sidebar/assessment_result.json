@@ -1,0 +1,117 @@
+{
+ "app": "grid_erp",
+ "creation": "2026-10-06 21:30:00.000000",
+ "docstatus": 0,
+ "doctype": "Workspace Sidebar",
+ "header_icon": "check-square",
+ "idx": 0,
+ "items": [
+  {
+   "child": 0,
+   "collapsible": 1,
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "Results",
+   "link_to": "Assessment Result",
+   "link_type": "DocType",
+   "show_arrow": 0,
+   "type": "Link",
+   "icon": "list"
+  },
+  {
+   "child": 0,
+   "collapsible": 1,
+   "icon": "notebook-pen",
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "Reports",
+   "link_type": "DocType",
+   "show_arrow": 0,
+   "type": "Section Break"
+  },
+  {
+   "child": 1,
+   "collapsible": 1,
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "Completed Assessments",
+   "link_to": "Completed Assessments",
+   "link_type": "Report",
+   "show_arrow": 0,
+   "type": "Link"
+  },
+  {
+   "child": 1,
+   "collapsible": 1,
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "Candidate Leaderboard",
+   "link_to": "Candidate Leaderboard",
+   "link_type": "Report",
+   "show_arrow": 0,
+   "type": "Link"
+  },
+  {
+   "child": 1,
+   "collapsible": 1,
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "Template Analytics",
+   "link_to": "Template Analytics",
+   "link_type": "Report",
+   "show_arrow": 0,
+   "type": "Link"
+  },
+  {
+   "child": 1,
+   "collapsible": 1,
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "Violation Reports",
+   "link_to": "Violation Reports",
+   "link_type": "Report",
+   "show_arrow": 0,
+   "type": "Link"
+  },
+  {
+   "child": 0,
+   "collapsible": 1,
+   "icon": "camera",
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "Proctoring",
+   "link_type": "DocType",
+   "show_arrow": 0,
+   "type": "Section Break"
+  },
+  {
+   "child": 1,
+   "collapsible": 1,
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "Snapshots",
+   "link_to": "Assessment Snapshot",
+   "link_type": "DocType",
+   "show_arrow": 0,
+   "type": "Link"
+  },
+  {
+   "child": 1,
+   "collapsible": 1,
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "Recordings",
+   "link_to": "Assessment Recording",
+   "link_type": "DocType",
+   "show_arrow": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-10-06 23:15:00.000000",
+ "modified_by": "Administrator",
+ "module": "Recruitment Assessment",
+ "name": "Assessment Result",
+ "owner": "Administrator",
+ "title": "Assessment Result",
+ "standard": 1
+}
